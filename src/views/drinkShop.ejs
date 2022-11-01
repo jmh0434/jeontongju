@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전국 전통주점</title>
+    <!-- font-style -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- font-awsome -->
+    <script src="https://kit.fontawesome.com/388ade87ec.js" crossorigin="anonymous"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/container.css">
+    <link rel="stylesheet" href="../css/indexPage/nav.css">
+    <!-- nav까지는 통일...!! ==> main내부 section부분은 폴더마다 다르게 할 거.. -->
+
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="left__slide__menu__box">
+                <div class="user__open__button open__button">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+            <div class="nav__logo">
+                <a href="/index" class="logo__title"><img src="../img/logo.png"></a>
+            </div>
+            <div class="nav__search">
+                <form action="/drink" method="get">
+                    <div class="search__box">
+                        <input type="search" placeholder="술 이름" name="title" id="title">
+                        <input type="submit" value="ok">
+                    </div>
+                </form>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="list">
+                        <a href="/index">home</a>
+                    </li>
+                    <li class="list">
+                        <% if(isAuthenticated){ %>
+                            <!--로그인이 된 경우 -->
+                            <a href="/logout" class="nav-link1">logout</a>
+                            <% } else { %>
+                                <a href="/local/index">login</a>
+                                <% } %>
+                    </li>
+                    <li class="list">
+                        <% if(isAuthenticated){ %>
+                            <!--로그인이 된 경우 -->
+                            <a href="/my-pages/:_id">mypage</a>
+                            <% } else { %>
+                                <a href="/new/index">signup</a>
+                                <% } %>
+                    </li>
+                </ul>
+            </div>
+            <div class="right__slide__menu__box">
+                <div class="menu__open__button open__button">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+        <main class="section">
+            <header class="section__header">
+                <div class="title">
+                    <h2>전국 전통주점</h2>
+                </div>
+            </header>
+            <div class="grid first">
+
+                <img src="../maps/0.PNG" alt="서울" height="250px" class="area b" width="250px"
+                    onClick="location.href='seoul'">
+
+                <img src="../maps/1.PNG" class="area a" height="250px" width="250px" alt='경기도'
+                    onClick="location.href='gyunggi'">
+
+                <img src="../maps/2.PNG" alt="Incheon" class="area g" style="width:250px; height:250px;" alt="인천"
+                    onClick="location.href='incheon'">
+
+                <img src="../maps/3.PNG" class="area f" style="width:250px; height:250px;" alt="충청도"
+                    onClick="location.href='chungcheong'">
+
+            </div>
+
+            <div class="grid second">
+
+                <img src="../maps/4.PNG" alt="gyeongsang" class="area h" style="width:250px; height:250px;" alt="경상도"
+                    onClick="location.href='gyeongsang'">
+
+                <img src="../maps/5.PNG" style="width:250px; height:250px;" alt="부산" class="area e"
+                    onClick="location.href='busan'">
+
+                <img src="../maps/6.PNG" class="area c" alt="전라도" height="250px" width="250px"
+                    onClick="location.href='jeolla'">
+
+                <img src="../maps/7.PNG" class="area d" style="width:250px; height:250px;" alt="제주도"
+                    onClick="location.href='jeju'">
+
+
+
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
