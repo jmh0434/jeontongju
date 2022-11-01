@@ -17,6 +17,5 @@ module.exports = () => {
       return console.log(err);
     }
   });
-
   return router;
 };
